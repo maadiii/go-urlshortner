@@ -1,0 +1,24 @@
+databases:
+  postgres:
+    driver: postgres
+    main_url: host=localhost port=5432 user=urlshortner password=urlshortner dbname=urlshortner sslmode=disable
+    test_url: host=localhost port=5432 user=urlshortner password=microtecture dbname=urlshortner_test sslmode=disable
+    admin_url: host=localhost port=5432 user=postgres password=postgres dbname=postgres
+
+jwt:
+  secret: <JWT-SECRET>
+  algorithm: HS256
+  max_age: 900  # 15 minute
+  httponly: true
+  refresh_token:
+    secret: <JWT-REFRESH-SECRET>
+    algorithm: HS256
+    max_age: 86400  # 24 hour
+    secure: true
+    httponly: true
+    path: /
+
+port: 8000
+
+# It is recommended to use a key with 32 or 64 bytes.
+secret_key: <<<<<<<<<<<SECRET-KEY>>>>>>>>>>>
